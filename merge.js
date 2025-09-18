@@ -3,6 +3,52 @@
 //   node merge.js            -> đọc tất cả .json trong folder hiện tại (trừ data.json) và ghi data.json
 //   node merge.js --dir=./data --out=mydata.json
 // (không cần thư viện ngoài)
+const fs = require("fs");
+const path = require("path");
+
+// 📂 Lấy tất cả file .json trong thư mục hiện tại (trừ data.json - file kết quả)
+const files = fs.readdirSync(".")
+  .filter(file => path.extname(file) === ".json" && file !== "data.json");
+
+let allData = [];
+
+console.log("🔎 Bắt đầu merge dữ liệu từ các file JSON...");
+console.log("📂 Danh sách file sẽ merge:", files);
+
+// 📥 Đọc và gộp dữ liệu
+files.forEach(file => {
+  if (fs.existsSync(file)) {
+    try {
+      const raw = fs.readFileSync(file, "utf8");
+      const data = JSON.parse(raw);
+
+      if (Array.isArray(data)) {
+        allData = allData.concat(data);
+        console.log(`✅ Đã đọc file ${file}, số bản ghi: ${data.length}`);
+      } else {
+        console.warn(`⚠️ File ${file} không phải mảng JSON hợp lệ!`);
+      }
+    } catch (err) {
+      console.error(`❌ Lỗi khi đọc file ${file}:`, err.message);
+    }
+  } else {
+    console.warn(`⚠️ File ${file} không tồn tại!`);
+  }
+});
+
+// 🔢 Đánh lại id từ 1 -> N
+allData = allData.map((item, index) => ({
+  ...item,
+  id: index + 1
+}));
+
+// 💾 Xuất ra file data.json
+fs.writeFileSync("data.json", JSON.stringify(allData, null, 2), "utf8");
+
+console.log("🎉 Merge hoàn tất!");
+console.log(`📊 Tổng số bản ghi sau khi merge: ${allData.length}`);
+console.log("📁 Kết quả đã lưu trong file data.json");
+
 
 const fs = require("fs");
 const path = require("path");
