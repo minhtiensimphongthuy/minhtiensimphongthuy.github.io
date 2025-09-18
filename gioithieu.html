@@ -4,6 +4,77 @@
   <meta charset="UTF-8">
   <title>Giới thiệu</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Trang trí nội dung giới thiệu */
+    .intro-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      line-height: 1.6;
+      font-family: Arial, sans-serif;
+    }
+
+    .intro-container h1 {
+      text-align: center;
+      color: #d35400;
+      margin-bottom: 20px;
+    }
+
+    .intro-container p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .intro-highlight {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    .intro-icons {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+
+    .intro-icons div {
+      text-align: center;
+      width: 220px;
+    }
+
+    .intro-icons img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .intro-footer {
+      text-align: center;
+      font-style: italic;
+      margin-top: 30px;
+      color: #16a085;
+      font-size: 18px;
+    }
+
+    /* Nút CTA */
+    .cta-button {
+      display: inline-block;
+      background-color: #e67e22;
+      color: #fff;
+      padding: 15px 25px;
+      margin-top: 20px;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #d35400;
+    }
+
+  </style>
 </head>
 <body>
   <!-- Thanh menu -->
@@ -16,8 +87,43 @@
   </nav>
 
   <!-- Nội dung chính -->
-  <h1>Giới thiệu</h1>
-  <p>Đây là trang giới thiệu về website Sim Phong Thủy.  
-     Website được tạo ra nhằm mang đến thông tin hữu ích về phong thủy và lựa chọn số điện thoại phù hợp.</p>
+  <div class="intro-container">
+    <h1>Giới thiệu về Sim Phong Thủy</h1>
+
+    <p>
+      Chào mừng bạn đến với <span class="intro-highlight">Sim Phong Thủy</span> – nơi mang đến cho bạn những số sim đẹp, hợp phong thủy, 
+      giúp thu hút tài lộc và may mắn trong cuộc sống.
+    </p>
+
+    <div class="intro-icons">
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/2910/2910768.png" alt="Bảo hành">
+        <p><span class="intro-highlight">Bảo hành uy tín</span><br>Cam kết minh bạch, chính chủ.</p>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Thu mua giá cao">
+        <p><span class="intro-highlight">Thu mua giá cao</span><br>Giá tốt hơn thị trường.</p>
+      </div>
+      <div>
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046674.png" alt="Giao hàng toàn quốc">
+        <p><span class="intro-highlight">Ship toàn quốc</span><br>Giao sim nhanh chóng, an toàn.</p>
+      </div>
+    </div>
+
+    <p>
+      Với đội ngũ tư vấn chuyên nghiệp và tận tâm, 
+      <span class="intro-highlight">Sim Phong Thủy</span> cam kết mang đến sự hài lòng tuyệt đối cho khách hàng.
+    </p>
+
+    <div class="intro-footer">
+      👉 Hãy lựa chọn Sim Phong Thủy ngay hôm nay để sở hữu những dãy số mang lại <br>
+      <strong>Tài Lộc – May Mắn – Thành Công!</strong>
+    </div>
+
+    <!-- Nút CTA -->
+    <div style="text-align:center; margin-top:30px;">
+      <a class="cta-button" href="https://zalo.me/0978670453" target="_blank">📲 Liên hệ ngay qua Zalo</a>
+    </div>
+  </div>
 </body>
 </html>
