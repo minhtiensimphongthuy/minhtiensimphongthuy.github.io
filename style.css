@@ -1,12 +1,75 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f9;
-  text-align: center;
+/* ----- RESET CƠ BẢN ----- */
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-h1 {
-  color: darkblue;
+/* ----- HEADER ----- */
+header {
+  background: darkblue;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
 }
- 
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* ----- NAVIGATION ----- */
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: yellow;
+}
+
+/* ----- SIM CARD ----- */
+.sim-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sim-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ----- BOX CHUNG ----- */
+.box {
+  border: 1px solid #aaa;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.box h3 {
+  margin-top: 0;
+  color: darkblue;
+  font-size: 18px;
+}
+
+.box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.box li {
+  padding: 5px 0;
+  cursor: pointer;
+}
