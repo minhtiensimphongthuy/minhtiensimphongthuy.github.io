@@ -1,75 +1,166 @@
-/* ----- RESET CƠ BẢN ----- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
   font-family: Arial, sans-serif;
-}
-
-/* ----- HEADER ----- */
-header {
-  background: darkblue;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-header h1 {
   margin: 0;
-  font-size: 24px;
+  background: #f3f3f3;
+  color: #333;
 }
 
-/* ----- NAVIGATION ----- */
-nav a {
+header {
+  background: #111;
   color: white;
-  text-decoration: none;
-  margin: 0 10px;
+  padding: 10px 20px;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 22px;
   font-weight: bold;
+  color: orange;
 }
 
-nav a:hover {
-  text-decoration: underline;
-  color: yellow;
+.search-box {
+  display: flex;
 }
 
-/* ----- SIM CARD ----- */
-.sim-card {
-  border: 1px solid #ccc;
-  padding: 15px;
-  background: #fff;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+.search-box input {
+  padding: 6px;
+  border: none;
+  outline: none;
 }
 
-.sim-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
-/* ----- BOX CHUNG ----- */
-.box {
-  border: 1px solid #aaa;
-  padding: 10px;
-  margin-bottom: 20px;
-  background: #fff;
-  border-radius: 5px;
-}
-
-.box h3 {
-  margin-top: 0;
-  color: darkblue;
-  font-size: 18px;
-}
-
-.box ul {
-  list-style: none;
-  padding: 0;
-}
-
-.box li {
-  padding: 5px 0;
+.search-box button {
+  background: orange;
+  border: none;
+  padding: 6px 10px;
   cursor: pointer;
 }
+
+.top-menu a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.banner {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  margin-bottom: 15px;
+}
+
+.container {
+  display: flex;
+  padding: 0 20px;
+}
+
+.main-content {
+  flex: 3;
+}
+
+.sidebar {
+  flex: 1;
+  margin-left: 20px;
+}
+
+h2 {
+  color: red;
+  margin-top: 20px;
+}
+
+.sim-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.sim-card {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.sim-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d00;
+}
+
+.sim-price {
+  color: #333;
+  margin: 5px 0;
+}
+
+.sim-network {
+  font-size: 13px;
+  color: #666;
+}
+
+.side-box {
+  background: white;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.side-box h3 {
+  background: orange;
+  color: white;
+  padding: 5px;
+  margin: -10px -10px 10px -10px;
+  font-size: 14px;
+}
+
+.side-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-box ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+footer {
+  background: #111;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+/* Nút Zalo nổi góc dưới */
+.zalo-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 60px;
+  height: 60px;
+  background: #0084ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  animation: zaloPulse 1.5s infinite;
+  z-index: 999;
+}
+
+.zalo-button img {
+  width: 35px;
+  height: 35px;
+}
+
+@keyframes zaloPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
