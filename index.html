@@ -7,30 +7,36 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Thanh top -->
+  <!-- Header -->
   <header>
-    <div class="logo">SimPhongThuy.com</div>
-    <input type="text" placeholder="Nhập số sim bạn cần tìm">
-    <button>Tìm</button>
+    <div class="top-bar">
+      <div class="logo">SimPhongThuy.com</div>
+      <div class="search-box">
+        <input type="text" placeholder="Nhập số sim bạn cần tìm">
+        <button>🔍</button>
+      </div>
+      <nav class="top-menu">
+        <a href="#">Trang chủ</a>
+        <a href="#">Sim phong thủy</a>
+        <a href="#">Sim trả góp</a>
+        <a href="#">Thu mua sim</a>
+        <a href="#">Cẩm nang sim</a>
+        <a href="#">Tin tức</a>
+      </nav>
+    </div>
   </header>
-
-  <!-- Menu -->
-  <nav>
-    <a href="index.html">Trang chủ</a>
-    <a href="gioithieu.html">Giới thiệu</a>
-    <a href="lienhe.html">Liên hệ</a>
-  </nav>
 
   <!-- Banner -->
   <section class="banner">
-    <h1>Sim Phong Thủy - Sim Hợp Mệnh - Sim Đẹp Giá Tốt</h1>
-    <p>Hệ thống phân phối sim phong thủy uy tín toàn quốc</p>
+    <h1>Sim Vận Mệnh</h1>
+    <p>Hệ thống phân phối sim phong thủy, sim hợp mệnh, sim hợp tuổi, sim số đẹp uy tín nhất tại Việt Nam</p>
   </section>
 
-  <main>
-    <!-- Sim Trả Góp -->
-    <section class="sim-box">
-      <h2>Sim Trả Góp</h2>
+  <!-- Nội dung chính -->
+  <div class="container">
+    <!-- Sim nổi bật -->
+    <section class="main-content">
+      <h2>SIM TRẢ GÓP</h2>
       <div class="sim-grid">
         <div class="sim-card">
           <div class="sim-number">0336.866.666</div>
@@ -48,11 +54,8 @@
           <div class="sim-network">Vinaphone</div>
         </div>
       </div>
-    </section>
 
-    <!-- Sim Đẹp Giá Rẻ -->
-    <section class="sim-box">
-      <h2>Sim Đẹp Giá Rẻ</h2>
+      <h2>SIM ĐẸP GIÁ RẺ</h2>
       <div class="sim-grid">
         <div class="sim-card">
           <div class="sim-number">0986.116.116</div>
@@ -70,30 +73,49 @@
     </section>
 
     <!-- Sidebar -->
-    <aside>
-      <h3>Sim theo giá</h3>
-      <ul>
-        <li>Sim dưới 500k</li>
-        <li>Sim 500k - 1 triệu</li>
-        <li>Sim 1 - 2 triệu</li>
-        <li>Sim 2 - 5 triệu</li>
-        <li>Sim 5 - 10 triệu</li>
-        <li>Sim trên 10 triệu</li>
-      </ul>
-
-      <h3>Sim theo mạng</h3>
-      <ul>
-        <li>Sim Viettel</li>
-        <li>Sim Vinaphone</li>
-        <li>Sim Mobifone</li>
-        <li>Sim Vietnamobile</li>
-      </ul>
+    <aside class="sidebar">
+      <div class="side-box">
+        <h3>SIM THEO GIÁ</h3>
+        <ul>
+          <li>Sim dưới 500k</li>
+          <li>Sim 500k - 1 triệu</li>
+          <li>Sim 1 - 2 triệu</li>
+          <li>Sim 2 - 5 triệu</li>
+          <li>Sim 5 - 10 triệu</li>
+          <li>Sim trên 10 triệu</li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <h3>SIM THEO MẠNG</h3>
+        <ul>
+          <li>Sim Viettel</li>
+          <li>Sim Vinaphone</li>
+          <li>Sim Mobifone</li>
+          <li>Sim Vietnamobile</li>
+          <li>Sim Gmobile</li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <h3>SIM THEO LOẠI</h3>
+        <ul>
+          <li>Sim Lục quý</li>
+          <li>Sim Ngũ quý</li>
+          <li>Sim Tứ quý</li>
+          <li>Sim Tam hoa</li>
+          <li>Sim Taxi</li>
+          <li>Sim Gánh đảo</li>
+        </ul>
+      </div>
     </aside>
-  </main>
+  </div>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 SimPhongThuy.com - Giao sim toàn quốc - Thu mua sim giá cao</p>
   </footer>
+<!-- Nút Zalo nổi -->
+<a href="https://zalo.me/so_zalo_cua_ban" class="zalo-button" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/906/906361.png" alt="Zalo">
+</a>
 </body>
 </html>
