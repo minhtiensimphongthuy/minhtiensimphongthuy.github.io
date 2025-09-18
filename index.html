@@ -2,68 +2,98 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Sim Phong Thủy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimPhongThuy.com</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Thanh menu -->
+  <!-- Thanh top -->
   <header>
-    <h1>SimPhongThuy.com</h1>
-    <nav>
-      <a href="index.html">Trang chủ</a>
-      <a href="gioithieu.html">Giới thiệu</a>
-      <a href="lienhe.html">Liên hệ</a>
-    </nav>
+    <div class="logo">SimPhongThuy.com</div>
+    <input type="text" placeholder="Nhập số sim bạn cần tìm">
+    <button>Tìm</button>
   </header>
 
-  <!-- Nội dung chính -->
-  <div class="container">
-    <!-- Bên trái -->
-    <div class="left">
-      <h2>SIM ĐẸP GIÁ TỐT</h2>
-      <div class="sim-list">
-        <div class="sim-card">0986.116.116 <span>222 triệu</span></div>
-        <div class="sim-card">0932.932.932 <span>199 triệu</span></div>
-        <div class="sim-card">0989.673.673 <span>39 triệu</span></div>
-        <div class="sim-card">0933.358.358 <span>68 triệu</span></div>
-        <div class="sim-card">0914.566.566 <span>59 triệu</span></div>
-        <div class="sim-card">0989.336.336 <span>190 triệu</span></div>
-        <div class="sim-card">0869.969.969 <span>110 triệu</span></div>
-        <div class="sim-card">0869.989.989 <span>110 triệu</span></div>
-        <div class="sim-card">0356.838.838 <span>25 triệu</span></div>
-        <div class="sim-card">0827.388.388 <span>19 triệu</span></div>
-        <div class="sim-card">0379.155.155 <span>16 triệu</span></div>
-        <div class="sim-card">0387.556.556 <span>16 triệu</span></div>
-        <div class="sim-card">0829.985.985 <span>12 triệu</span></div>
-        <div class="sim-card">0788.306.306 <span>8 triệu</span></div>
-        <div class="sim-card">0372.290.290 <span>6 triệu</span></div>
-      </div>
-    </div>
+  <!-- Menu -->
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a href="gioithieu.html">Giới thiệu</a>
+    <a href="lienhe.html">Liên hệ</a>
+  </nav>
 
-    <!-- Bên phải -->
-    <div class="right">
-      <div class="box">
-        <h3>SIM THEO GIÁ</h3>
-        <ul>
-          <li>Sim dưới 20tr</li>
-          <li>Sim 20-50tr</li>
-          <li>Sim 50-100tr</li>
-          <li>Sim trên 100tr</li>
-        </ul>
-      </div>
+  <!-- Banner -->
+  <section class="banner">
+    <h1>Sim Phong Thủy - Sim Hợp Mệnh - Sim Đẹp Giá Tốt</h1>
+    <p>Hệ thống phân phối sim phong thủy uy tín toàn quốc</p>
+  </section>
 
-      <div class="box">
-        <h3>SIM THEO MẠNG</h3>
-        <ul>
-          <li>Sim Viettel</li>
-          <li>Sim Vinaphone</li>
-          <li>Sim Mobifone</li>
-          <li>Sim Vietnamobile</li>
-        </ul>
+  <main>
+    <!-- Sim Trả Góp -->
+    <section class="sim-box">
+      <h2>Sim Trả Góp</h2>
+      <div class="sim-grid">
+        <div class="sim-card">
+          <div class="sim-number">0336.866.666</div>
+          <div class="sim-price">14,758k/tháng</div>
+          <div class="sim-network">Viettel</div>
+        </div>
+        <div class="sim-card">
+          <div class="sim-number">0907.259.999</div>
+          <div class="sim-price">11,991k/tháng</div>
+          <div class="sim-network">Mobifone</div>
+        </div>
+        <div class="sim-card">
+          <div class="sim-number">0913.336.888</div>
+          <div class="sim-price">11,189k/tháng</div>
+          <div class="sim-network">Vinaphone</div>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <script src="script.js"></script>
+    <!-- Sim Đẹp Giá Rẻ -->
+    <section class="sim-box">
+      <h2>Sim Đẹp Giá Rẻ</h2>
+      <div class="sim-grid">
+        <div class="sim-card">
+          <div class="sim-number">0986.116.116</div>
+          <div class="sim-price">222 triệu</div>
+        </div>
+        <div class="sim-card">
+          <div class="sim-number">0932.932.932</div>
+          <div class="sim-price">199 triệu</div>
+        </div>
+        <div class="sim-card">
+          <div class="sim-number">0989.673.673</div>
+          <div class="sim-price">39 triệu</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar -->
+    <aside>
+      <h3>Sim theo giá</h3>
+      <ul>
+        <li>Sim dưới 500k</li>
+        <li>Sim 500k - 1 triệu</li>
+        <li>Sim 1 - 2 triệu</li>
+        <li>Sim 2 - 5 triệu</li>
+        <li>Sim 5 - 10 triệu</li>
+        <li>Sim trên 10 triệu</li>
+      </ul>
+
+      <h3>Sim theo mạng</h3>
+      <ul>
+        <li>Sim Viettel</li>
+        <li>Sim Vinaphone</li>
+        <li>Sim Mobifone</li>
+        <li>Sim Vietnamobile</li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 SimPhongThuy.com - Giao sim toàn quốc - Thu mua sim giá cao</p>
+  </footer>
 </body>
 </html>
