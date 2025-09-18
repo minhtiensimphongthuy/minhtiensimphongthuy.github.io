@@ -1,63 +1,43 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <title>Liên hệ</title>
+  <meta charset="utf-8" />
+  <title>Liên hệ - SimPhongThuy</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-  <style>
-    /* Nút nổi cố định góc phải */
-    .contact-fixed {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 9999;
-    }
-    .contact-fixed a img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-    .contact-fixed a img:hover {
-      transform: scale(1.1);
-    }
-  </style>
 </head>
 <body>
-  <!-- Thanh menu -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Trang chủ</a></li>
-      <li><a href="gioithieu.html">Giới thiệu</a></li>
-      <li><a href="lienhe.html">Liên hệ</a></li>
-    </ul>
-  </nav>
+  <header class="topbar">
+    <div class="top-inner">
+      <div class="logo">SimPhongThuy.com</div>
+      <nav class="top-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="lienhe.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Nội dung chính -->
-  <div class="box">
-    <h1>Liên hệ</h1>
-    <p>Nếu bạn có thắc mắc, vui lòng liên hệ qua email:  
-      <strong>hotro@simplongphongthuy.vn</strong><br>
-      hoặc số điện thoại <strong>0978670453</strong>.
-    </p>
-  </div>
+  <main class="single-wrap">
+    <section class="box">
+      <h1>Liên hệ</h1>
+      <p>Nếu bạn có thắc mắc, vui lòng liên hệ:</p>
+      <p>Email: <strong>hotro@simphongthuy.vn</strong></p>
+      <p>Điện thoại / Zalo: <strong><a href="tel:0978670453">0978 670 453</a></strong></p>
+      <p>Hoặc nhấn vào biểu tượng Zalo/gọi góc phải để chat nhanh.</p>
+    </section>
+  </main>
 
-  <!-- Nút cố định góc phải -->
+  <!-- nút cố định góc phải -->
   <div class="contact-fixed">
-    <!-- Nút gọi điện -->
-    <a href="tel:0978670453">
-      <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" alt="Gọi điện">
+    <a class="btn-phone" href="tel:0978670453" title="Gọi ngay">
+      <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M6.62 10.79a15.464 15.464 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1v3.5a1 1 0 01-1 1C11.85 21.5 2.5 12.15 2.5 3a1 1 0 011-1H7a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.01l-2.71 2.21z"/></svg>
     </a>
-    <!-- Nút Zalo -->
-    <a href="https://zalo.me/0978670453" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/6422/6422210.png" alt="Zalo">
+    <a class="btn-zalo" href="https://zalo.me/0978670453" target="_blank" title="Zalo Chat">
+      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="zalo" />
     </a>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
