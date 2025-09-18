@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Liên hệ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Thanh menu -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Trang chủ</a></li>
+      <li><a href="gioithieu.html">Giới thiệu</a></li>
+      <li><a href="lienhe.html">Liên hệ</a></li>
+    </ul>
+  </nav>
+
+  <!-- Nội dung chính -->
+  <h1>Liên hệ</h1>
+  <p>Nếu bạn có thắc mắc, vui lòng liên hệ qua email: 
+     <strong>hotro@simphongthuy.vn</strong> hoặc số điện thoại <strong>0123-456-789</strong>.
+  </p>
+</body>
+</html>
