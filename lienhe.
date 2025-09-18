@@ -17,8 +17,15 @@
 
   <!-- Nội dung chính -->
   <h1>Liên hệ</h1>
-  <p>Nếu bạn có thắc mắc, vui lòng liên hệ qua email: 
-     <strong>hotro@simphongthuy.vn</strong> hoặc số điện thoại <strong>0123-456-789</strong>.
-  </p>
-</body>
-</html>
+<p>Nếu bạn có thắc mắc, vui lòng liên hệ qua email:
+  <strong>hotro@simphongthuy.vn</strong> 
+  hoặc số điện thoại <strong>0978670453</strong>.
+</p>
+
+<!-- Biểu tượng điện thoại liên hệ Zalo -->
+<a href="https://zalo.me/0978670453" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png" 
+       alt="Liên hệ Zalo" 
+       width="50" 
+       style="cursor:pointer;">
+</a>
