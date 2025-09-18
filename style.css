@@ -1,166 +1,70 @@
-body {
+/* style.css - layout chung */
+*{box-sizing:border-box}
+body{
   font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f3f3f3;
-  color: #333;
+  margin:0;
+  background:#f4f4f4;
+  color:#222;
 }
 
-header {
-  background: #111;
-  color: white;
-  padding: 10px 20px;
+/* header */
+.topbar{background:#0c2a6e;color:#fff;padding:12px 0;box-shadow:0 2px 4px rgba(0,0,0,0.1)}
+.top-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 15px}
+.logo{font-weight:800;font-size:20px}
+.search{display:flex;gap:8px;align-items:center}
+.search input{padding:8px;border-radius:4px;border:0;min-width:200px}
+.search button{padding:8px 12px;background:#ffc107;border:0;border-radius:4px;cursor:pointer}
+.top-links a{color:#fff;margin-left:14px;text-decoration:none}
+
+/* layout */
+.wrap{max-width:1100px;margin:18px auto;display:grid;grid-template-columns:260px 1fr 260px;gap:18px;padding:0 15px}
+.sidebar .box,.rightbar .box,.content .box{background:#fff;padding:14px;border-radius:6px;border:1px solid #e4e4e4}
+.rightbar .contact-box{background:#fff;padding:14px;border-radius:6px;border:1px solid #e4e4e4}
+
+/* hero */
+.hero{background:#fff;padding:18px;border-radius:6px;border:1px solid #e4e4e4;margin-bottom:12px}
+.hero h1{margin:0;color:#b30000}
+
+/* sim grid */
+.sim-section h2{color:#b30000;margin:10px 0}
+.sim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.sim-card{background:#fff;border:1px solid #e2e2e2;padding:14px;border-radius:8px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+.sim-card .sim-num{font-weight:700;color:#c40000;font-size:18px}
+.sim-card .sim-price{margin-top:8px;color:#555}
+
+/* rightbar */
+.contact-box h4{margin:0 0 10px 0}
+.contact-box .phone a,.contact-box .zalo a{display:block;text-decoration:none;color:#222;padding:8px 0}
+
+/* single page */
+.single-wrap{max-width:900px;margin:24px auto;padding:0 15px}
+.intro-container{background:#fff;padding:20px;border-radius:8px;border:1px solid #e4e4e4}
+.intro-container h1{color:#2c3e50;text-align:center}
+.intro-icons{display:flex;justify-content:space-around;margin:28px 0}
+.intro-icons div{text-align:center}
+.intro-icons img{width:80px;height:80px}
+
+/* responsive */
+@media(max-width:1000px){
+  .wrap{grid-template-columns:1fr; padding:0 12px}
+  .sim-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .sim-grid{grid-template-columns:1fr}
+  .top-inner{flex-direction:column;gap:8px;align-items:flex-start}
 }
 
-.top-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+/* nút cố định góc phải (gọi + zalo) */
+.contact-fixed{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  z-index:9999;
 }
-
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: orange;
-}
-
-.search-box {
-  display: flex;
-}
-
-.search-box input {
-  padding: 6px;
-  border: none;
-  outline: none;
-}
-
-.search-box button {
-  background: orange;
-  border: none;
-  padding: 6px 10px;
-  cursor: pointer;
-}
-
-.top-menu a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.banner {
-  text-align: center;
-  padding: 20px;
-  background: white;
-  margin-bottom: 15px;
-}
-
-.container {
-  display: flex;
-  padding: 0 20px;
-}
-
-.main-content {
-  flex: 3;
-}
-
-.sidebar {
-  flex: 1;
-  margin-left: 20px;
-}
-
-h2 {
-  color: red;
-  margin-top: 20px;
-}
-
-.sim-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.sim-card {
-  background: white;
-  border: 1px solid #ddd;
-  padding: 15px;
-  text-align: center;
-  border-radius: 5px;
-}
-
-.sim-number {
-  font-size: 18px;
-  font-weight: bold;
-  color: #d00;
-}
-
-.sim-price {
-  color: #333;
-  margin: 5px 0;
-}
-
-.sim-network {
-  font-size: 13px;
-  color: #666;
-}
-
-.side-box {
-  background: white;
-  margin-bottom: 15px;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.side-box h3 {
-  background: orange;
-  color: white;
-  padding: 5px;
-  margin: -10px -10px 10px -10px;
-  font-size: 14px;
-}
-
-.side-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.side-box ul li {
-  padding: 5px 0;
-  border-bottom: 1px solid #eee;
-}
-
-footer {
-  background: #111;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
-/* Nút Zalo nổi góc dưới */
-.zalo-button {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  width: 60px;
-  height: 60px;
-  background: #0084ff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  animation: zaloPulse 1.5s infinite;
-  z-index: 999;
-}
-
-.zalo-button img {
-  width: 35px;
-  height: 35px;
-}
-
-@keyframes zaloPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
+.contact-fixed a{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;border-radius:50%;box-shadow:0 6px 18px rgba(0,0,0,0.15);text-decoration:none}
+.contact-fixed .btn-phone{background:#0b84ff;color:#fff}
+.contact-fixed .btn-zalo{background:#06a3f1}
+.contact-fixed .btn-zalo img{width:36px;height:36px}
