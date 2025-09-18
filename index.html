@@ -1,128 +1,287 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SimPhongThuyMinhTien</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SimPhongThuyMinhTien - Sim đẹp, giá tốt</title>
+
+  <!-- Simple reset + google font -->
+  <style>
+    :root{
+      --yellow:#f6b508; --dark:#222; --muted:#f0f0f0; --accent:#d32f2f; --green:#007b5e;
+      --card:#fff; --shadow:0 2px 6px rgba(0,0,0,0.06);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:#efefef;color:#222}
+
+    /* Header */
+    .topbar{background:var(--dark);color:#fff;padding:14px 22px;display:flex;align-items:center;gap:18px}
+    .brand{font-weight:700;font-size:20px}
+    .search{flex:1;display:flex;gap:8px}
+    .search input{flex:1;padding:8px 10px;border-radius:4px;border:0}
+    .search button{background:var(--yellow);border:0;padding:8px 12px;border-radius:4px;cursor:pointer}
+
+    /* Layout */
+    .wrap{max-width:1150px;margin:18px auto;display:grid;grid-template-columns:1fr 320px;gap:22px}
+    .main{background:var(--muted);padding:18px;border-radius:4px}
+    .sidebar{padding:18px}
+
+    /* Big promo */
+    .promo{background:#fff;padding:18px;border-radius:4px;margin-bottom:16px;box-shadow:var(--shadow)}
+    .promo h2{margin:0;color:var(--dark)}
+    .promo p{margin:8px 0 0;color:#444}
+
+    /* Section */
+    .section{background:#fff;padding:14px;border-radius:6px;margin-bottom:16px;box-shadow:var(--shadow)}
+    .section h3{color:var(--accent);margin:0 0 12px 0}
+
+    /* Grid of sim cards */
+    .sim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .sim-card{background:var(--card);padding:12px;border-radius:6px;border:1px solid #e6e6e6;display:flex;gap:12px;align-items:center}
+    .sim-logo{width:68px;height:68px;border-radius:50%;background:#fafafa;display:flex;align-items:center;justify-content:center;border:1px solid #eee}
+    .sim-info{flex:1}
+    .sim-num{font-size:20px;font-weight:700;color:var(--accent)}
+    .sim-price{color:#666;margin-top:6px}
+    .sim-actions{margin-left:8px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:6px;background:var(--yellow);border:0;cursor:pointer}
+
+    /* Sidebar boxes */
+    .box{background:#fff;padding:12px;border-radius:6px;margin-bottom:12px;box-shadow:var(--shadow)}
+    .box h4{margin:0 0 8px 0;color:#333}
+    .list{list-style:none;padding:0;margin:0}
+    .list li{padding:6px 0;border-bottom:1px dashed #eee}
+
+    /* Floating contact (right bottom) */
+    .contact-fixed{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:10px;z-index:9999}
+    .contact-fixed a{display:block;width:56px;height:56px;border-radius:50%;background:#007bff;color:#fff;text-align:center;line-height:56px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+    .contact-call{background:#007bff}
+    .contact-zalo{background:#00a8ff}
+
+    /* Filters row */
+    .filters{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+    .select, .range{padding:8px;border:1px solid #ddd;border-radius:6px}
+
+    /* responsive */
+    @media(max-width:900px){.wrap{grid-template-columns:1fr}.sim-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.sim-grid{grid-template-columns:1fr}.search{flex-direction:column}}
+
+    /* little footer */
+    footer{padding:18px;text-align:center;color:#666}
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <div class="logo-circle">SPT</div>
-        <div class="brand-text">
-          <h1>SimPhongThuyMinhTien</h1>
-          <div class="sub">Sim phong thủy • Bảo hành • Thu mua giá cao • Ship toàn quốc</div>
-        </div>
-      </div>
 
-      <div class="search">
-        <input id="search" placeholder="Nhập số sim bạn cần tìm" />
-        <button id="searchBtn">🔍</button>
-      </div>
+  <header class="topbar">
+    <div class="brand">SimPhongThuyMinhTien</div>
+    <div class="search">
+      <input id="q" placeholder="Nhập số sim bạn cần tìm (ví dụ: 0914, 099...)" />
+      <button id="searchBtn">Tìm kiếm</button>
     </div>
-    <nav class="top-nav">
-      <div class="container">
-        <a href="index.html">Trang chủ</a>
-        <a href="gioithieu.html">Giới thiệu</a>
-        <a href="lienhe.html">Liên hệ</a>
-        <a href="#">Sim phong thủy</a>
-        <a href="#">Sim theo giá</a>
-      </div>
-    </nav>
+    <div class="phone">Hotline/Zalo: <strong>0978670453</strong></div>
   </header>
 
-  <main class="container main-layout">
-    <section class="left">
-      <div class="hero-box">
-        <h2>SIM TRẢ GÓP</h2>
-        <div class="grid sim-grid">
-          <!-- large featured -->
-          <div class="sim-card sim-feature">
-            <div class="sim-carrier">Viettel</div>
-            <div class="sim-number">0336866666</div>
-            <div class="sim-price">Góp 14,758k/tháng</div>
-          </div>
+  <div class="wrap">
+    <main class="main">
 
-          <!-- small cards -->
-          <div class="sim-card"><div class="sim-number">0986.116.116</div><div class="sim-price">222 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0932.932.932</div><div class="sim-price">199 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0989.673.673</div><div class="sim-price">39 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0933.358.358</div><div class="sim-price">68 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0914.566.566</div><div class="sim-price">59 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0989.336.336</div><div class="sim-price">190 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0869.969.969</div><div class="sim-price">110 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0869.989.989</div><div class="sim-price">110 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0356.838.838</div><div class="sim-price">25 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0827.388.388</div><div class="sim-price">19 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0379.155.155</div><div class="sim-price">16 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0387.556.556</div><div class="sim-price">16 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0829.985.985</div><div class="sim-price">12 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0788.306.306</div><div class="sim-price">8 triệu</div></div>
-          <div class="sim-card"><div class="sim-number">0372.290.290</div><div class="sim-price">6 triệu</div></div>
-        </div>
+      <div class="promo">
+        <h2>Sim Vận Mệnh</h2>
+        <p>Hệ thống phân phối sim phong thủy, sim hợp mệnh, sim hợp tuổi. Bảo hành, thu mua giá cao hơn thị trường, ship toàn quốc.</p>
       </div>
 
-      <div class="section sim-listing">
-        <h3>SIM ĐẸP GIÁ RẺ</h3>
-        <div class="grid sim-grid">
-          <!-- reuse similar structure -->
-          <div class="sim-card sim-feature">
-            <div class="sim-carrier">Viettel</div>
-            <div class="sim-number">0336866666</div>
-            <div class="sim-price">368,000,000 đ</div>
+      <div class="section">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h3>SIM ĐẸP GIÁ TỐT</h3>
+          <div class="filters">
+            <select id="networkFilter" class="select">
+              <option value="all">Tất cả nhà mạng</option>
+              <option value="viettel">Viettel</option>
+              <option value="vinaphone">Vinaphone</option>
+              <option value="mobifone">Mobifone</option>
+              <option value="vietnamobile">Vietnamobile</option>
+              <option value="gmobile">Gmobile</option>
+              <option value="itelecom">iTelecom</option>
+            </select>
+            <input id="minPrice" class="range" placeholder="Giá từ (vnđ)" />
+            <input id="maxPrice" class="range" placeholder="Giá đến (vnđ)" />
+            <button id="resetFilters" class="btn">Reset</button>
           </div>
-          <div class="sim-card"><div class="sim-number">09.8779.8779</div><div class="sim-price">68,000,000 đ</div></div>
-          <div class="sim-card"><div class="sim-number">0903.199.888</div><div class="sim-price">79,000,000 đ</div></div>
-          <div class="sim-card"><div class="sim-number">0907.259.999</div><div class="sim-price">299,000,000 đ</div></div>
         </div>
-      </div>
-    </section>
 
-    <aside class="right">
-      <div class="box yellow">
+        <div id="simGrid" class="sim-grid" style="margin-top:12px"></div>
+
+      </div>
+
+      <div class="section">
+        <h3>SIM TRẢ GÓP</h3>
+        <div id="installmentGrid" class="sim-grid"></div>
+      </div>
+
+    </main>
+
+    <aside class="sidebar">
+      <div class="box">
         <h4>SIM THEO GIÁ</h4>
-        <ul>
+        <ul class="list">
           <li>Sim dưới 500k</li>
-          <li>Sim từ 500k - 1 triệu</li>
-          <li>Sim từ 1 - 2 triệu</li>
-          <li>Sim từ 2 - 5 triệu</li>
-        </ul>
-      </div>
-
-      <div class="box yellow">
-        <h4>SIM THEO MẠNG</h4>
-        <ul>
-          <li>Sim Viettel</li>
-          <li>Sim Vinaphone</li>
-          <li>Sim Mobifone</li>
-          <li>Sim Vietnamobile</li>
+          <li>Sim giá 500k - 1 triệu</li>
+          <li>Sim 1 - 3 triệu</li>
+          <li>Sim 3 - 5 triệu</li>
+          <li>Sim 5 - 10 triệu</li>
         </ul>
       </div>
 
       <div class="box">
-        <h4>TIN MỚI</h4>
-        <div class="news">
-          <p><strong>26-06-2022</strong> Bí quyết chọn sim hợp tuổi Kỷ Hợi...</p>
-          <p><strong>25-06-2022</strong> Cách chọn sim hợp tuổi Ất Mùi...</p>
-        </div>
+        <h4>BÁN HÀNG ONLINE</h4>
+        <p>Hotline/Zalo: <strong>0978670453</strong></p>
+        <a href="tel:0978670453" class="btn" style="display:block;text-align:center">Gọi ngay</a>
+        <a href="https://zalo.me/0978670453" target="_blank" class="btn" style="margin-top:8px;background:#00a8ff">Chat Zalo</a>
+      </div>
+
+      <div class="box">
+        <h4>SIM THEO MẠNG</h4>
+        <ul class="list">
+          <li>Sim Viettel</li>
+          <li>Sim Vinaphone</li>
+          <li>Sim Mobifone</li>
+        </ul>
       </div>
     </aside>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div>© <strong>SimPhongThuyMinhTien</strong> — Bảo hành & Thu mua giá cao. Số liên hệ: <a href="tel:0978670453">0978 670 453</a></div>
-    </div>
-  </footer>
-
-  <!-- Floating contact buttons (call + Zalo) -->
-  <div class="contact-fixed" aria-hidden="false">
-    <a class="call-btn" href="tel:0978670453" title="Gọi mua hàng">📞<span>0978 670 453</span></a>
-    <a class="zalo-btn" href="https://zalo.me/0978670453" target="_blank" rel="noopener" title="Chat Zalo">💬<span>Zalo</span></a>
   </div>
 
-  <script src="script.js"></script>
+  <!-- floating contact buttons -->
+  <div class="contact-fixed" aria-hidden>
+    <a href="tel:0978670453" class="contact-call" title="Gọi ngay">📞</a>
+    <a href="https://zalo.me/0978670453" target="_blank" class="contact-zalo" title="Chat Zalo">💬</a>
+  </div>
+
+  <footer>
+    © SimPhongThuyMinhTien - Liên hệ Zalo: 0978670453
+  </footer>
+
+  <!-- script: generate demo data + filter + actions -->
+  <script>
+    // --- CONFIG: change brand and phone here if needed ---
+    const BRAND_NAME = 'SimPhongThuyMinhTien';
+    const CONTACT_PHONE = '0978670453';
+    // ----------------------------------------------------
+
+    // small helper
+    function $(s){return document.querySelector(s)}
+
+    // sample pools for auto-generation
+    const prefixes = {
+      viettel:['0986','0984','0985','0966','097','086','032','033','034','035','036','037','038','039'],
+      vinaphone:['091','094','088','081','082','083','084'],
+      mobifone:['090','093','089','070','079','077','076'],
+      vietnamobile:['092','056','058'],
+      gmobile:['0993','0994'],
+      itelecom:['087','088']
+    };
+
+    // generate a random phone number given prefix
+    function genNumber(prefix){
+      // prefix may include dots in design, we'll return dotted format for display
+      let body = '';
+      for(let i=0;i<6;i++) body += Math.floor(Math.random()*10);
+      const raw = prefix + body; // e.g. 098612345678
+      // format to xxx.xxx.xxx or xx.xxx.xxx depending on length
+      return raw.replace(/(\d{3})(\d{3})(\d{3,})/, '$1.$2.$3');
+    }
+
+    // generate many sample sims
+    function generateSims(count=120){
+      const sims = [];
+      const networks = Object.keys(prefixes);
+      for(let i=0;i<count;i++){
+        const net = networks[Math.floor(Math.random()*networks.length)];
+        const prefixList = prefixes[net];
+        const prefix = prefixList[Math.floor(Math.random()*prefixList.length)];
+        const number = genNumber(prefix);
+        // price random: smaller chances for very expensive numbers
+        let price = Math.round((Math.random()*200000000)+100000); // base random
+        // make some numbers very expensive occasionally
+        if(Math.random() < 0.06) price = Math.round(Math.random()*1000000000)+50000000;
+        // installment example per month
+        const installment = Math.round(price/12);
+        sims.push({number,network:net,price,installment});
+      }
+      return sims;
+    }
+
+    // global dataset
+    const SIMS = generateSims(220);
+
+    // render functions
+    function formatVnd(n){
+      if(n>=1000000) return (n/1000000).toFixed(n%1000000?1:0)+' triệu đ';
+      return n.toLocaleString('vi-VN')+' đ';
+    }
+
+    function renderGrid(container, items){
+      container.innerHTML = '';
+      if(items.length===0){container.innerHTML='<div>Không tìm thấy số phù hợp.</div>';return}
+      for(const s of items){
+        const card = document.createElement('div'); card.className='sim-card';
+        card.innerHTML = `
+          <div class="sim-logo"> <img src="https://via.placeholder.com/48" alt="logo" style="width:40px;height:40px;border-radius:50%"> </div>
+          <div class="sim-info">
+            <div class="sim-num">${s.number}</div>
+            <div class="sim-price">${formatVnd(s.price)}</div>
+          </div>
+          <div class="sim-actions">
+            <button class="btn" onclick="onCall('${CONTACT_PHONE}')">Gọi</button>
+          </div>
+        `;
+        container.appendChild(card);
+      }
+    }
+
+    function onCall(phone){
+      // open telephone + confirm to redirect to zalo page as secondary option
+      window.location.href = 'tel:'+phone;
+    }
+
+    // initial render
+    const simGrid = document.getElementById('simGrid');
+    const installmentGrid = document.getElementById('installmentGrid');
+    renderGrid(simGrid, SIMS.slice(0,9));
+    renderGrid(installmentGrid, SIMS.slice(9,18));
+
+    // search & filters
+    $('#searchBtn').addEventListener('click',()=>applyFilters());
+    $('#q').addEventListener('keydown',e=>{ if(e.key==='Enter') applyFilters(); });
+    $('#resetFilters').addEventListener('click',()=>{ $('#q').value=''; $('#minPrice').value=''; $('#maxPrice').value=''; $('#networkFilter').value='all'; applyFilters(); });
+
+    function applyFilters(){
+      const q = ($('#q').value||'').trim();
+      const net = $('#networkFilter').value;
+      const min = parseInt($('#minPrice').value.replace(/\D/g,'')) || 0;
+      const max = parseInt($('#maxPrice').value.replace(/\D/g,'')) || Infinity;
+
+      let out = SIMS.filter(s=>{
+        if(net!=='all' && s.network!==net) return false;
+        if(s.price < min) return false;
+        if(s.price > max) return false;
+        if(q){
+          const plain = s.number.replace(/\./g,'');
+          if(!plain.includes(q.replace(/\D/g,''))) return false;
+        }
+        return true;
+      });
+
+      renderGrid(simGrid, out.slice(0,60));
+    }
+
+    // replace brand and phone across page (in case you want to change in one place)
+    document.querySelectorAll('.brand').forEach(el=>el.textContent = BRAND_NAME);
+    document.querySelectorAll('.phone, .box strong').forEach(el=>{ if(el.innerText.includes('0978670453')||el.innerText.includes('Hotline')) el.innerHTML = 'Hotline/Zalo: <strong>'+CONTACT_PHONE+'</strong>'; });
+
+    // make contact buttons open Zalo with phone in new tab
+    document.querySelectorAll('.contact-zalo').forEach(a=>a.href = 'https://zalo.me/'+CONTACT_PHONE);
+    document.querySelectorAll('.contact-call').forEach(a=>a.href = 'tel:'+CONTACT_PHONE);
+
+  </script>
+
 </body>
 </html>
