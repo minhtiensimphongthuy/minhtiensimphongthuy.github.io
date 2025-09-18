@@ -282,6 +282,72 @@
     document.querySelectorAll('.contact-call').forEach(a=>a.href = 'tel:'+CONTACT_PHONE);
 
   </script>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SimPhongThuyMinhTien</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">SimPhongThuyMinhTien</div>
+      <nav class="nav">
+        <a href="index.html">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="lienhe.html">Liên hệ</a>
+      </nav>
+    </div>
+  </header>
 
+  <div class="wrap main-grid">
+    <main class="content">
+      <section class="search-bar">
+        <input id="q" placeholder="Nhập số hoặc phần số (ví dụ 091, 097...)">
+        <select id="carrier">
+          <option value="">-- Tất cả nhà mạng --</option>
+        </select>
+
+        <input id="minPrice" placeholder="Giá min (vnđ)" type="number">
+        <input id="maxPrice" placeholder="Giá max (vnđ)" type="number">
+        <button id="filterBtn">Lọc</button>
+        <button id="resetBtn">Reset</button>
+      </section>
+
+      <section id="sim-list" class="sim-list">
+        <!-- Cards sẽ được render tại đây -->
+      </section>
+
+      <div id="pagination" class="pagination"></div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="box">
+        <h3>SIM THEO GIÁ</h3>
+        <ul>
+          <li>Sim dưới 500k</li>
+          <li>Sim từ 500k - 1triệu</li>
+          <li>Sim từ 1 - 2 triệu</li>
+          <li>Sim từ 2 - 5 triệu</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>SIM THEO MẠNG</h3>
+        <ul id="sidebar-carriers"></ul>
+      </div>
+    </aside>
+  </div>
+
+  <!-- nút cố định góc phải: gọi + zalo -->
+  <div class="contact-fixed">
+    <a class="btn call" href="tel:0978670453" title="Gọi ngay">📞 0978 670 453</a>
+    <a class="btn zalo" href="https://zalo.me/0978670453" target="_blank" title="Zalo">💬 Zalo</a>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
+
