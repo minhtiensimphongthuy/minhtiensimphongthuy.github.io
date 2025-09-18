@@ -2,95 +2,125 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-  <title>SimPhongThuy - Trang chủ</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SimPhongThuyMinhTien</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="top-inner">
-      <div class="logo">SimPhongThuy.com</div>
-      <div class="search">
-        <input placeholder="Nhập số sim bạn cần tìm" />
-        <button>Tìm kiếm</button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo-circle">SPT</div>
+        <div class="brand-text">
+          <h1>SimPhongThuyMinhTien</h1>
+          <div class="sub">Sim phong thủy • Bảo hành • Thu mua giá cao • Ship toàn quốc</div>
+        </div>
       </div>
-      <nav class="top-links">
+
+      <div class="search">
+        <input id="search" placeholder="Nhập số sim bạn cần tìm" />
+        <button id="searchBtn">🔍</button>
+      </div>
+    </div>
+    <nav class="top-nav">
+      <div class="container">
         <a href="index.html">Trang chủ</a>
         <a href="gioithieu.html">Giới thiệu</a>
         <a href="lienhe.html">Liên hệ</a>
-      </nav>
-    </div>
+        <a href="#">Sim phong thủy</a>
+        <a href="#">Sim theo giá</a>
+      </div>
+    </nav>
   </header>
 
-  <main class="wrap">
-    <aside class="sidebar">
-      <div class="box">
-        <h3>SIM THEO GIÁ</h3>
+  <main class="container main-layout">
+    <section class="left">
+      <div class="hero-box">
+        <h2>SIM TRẢ GÓP</h2>
+        <div class="grid sim-grid">
+          <!-- large featured -->
+          <div class="sim-card sim-feature">
+            <div class="sim-carrier">Viettel</div>
+            <div class="sim-number">0336866666</div>
+            <div class="sim-price">Góp 14,758k/tháng</div>
+          </div>
+
+          <!-- small cards -->
+          <div class="sim-card"><div class="sim-number">0986.116.116</div><div class="sim-price">222 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0932.932.932</div><div class="sim-price">199 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0989.673.673</div><div class="sim-price">39 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0933.358.358</div><div class="sim-price">68 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0914.566.566</div><div class="sim-price">59 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0989.336.336</div><div class="sim-price">190 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0869.969.969</div><div class="sim-price">110 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0869.989.989</div><div class="sim-price">110 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0356.838.838</div><div class="sim-price">25 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0827.388.388</div><div class="sim-price">19 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0379.155.155</div><div class="sim-price">16 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0387.556.556</div><div class="sim-price">16 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0829.985.985</div><div class="sim-price">12 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0788.306.306</div><div class="sim-price">8 triệu</div></div>
+          <div class="sim-card"><div class="sim-number">0372.290.290</div><div class="sim-price">6 triệu</div></div>
+        </div>
+      </div>
+
+      <div class="section sim-listing">
+        <h3>SIM ĐẸP GIÁ RẺ</h3>
+        <div class="grid sim-grid">
+          <!-- reuse similar structure -->
+          <div class="sim-card sim-feature">
+            <div class="sim-carrier">Viettel</div>
+            <div class="sim-number">0336866666</div>
+            <div class="sim-price">368,000,000 đ</div>
+          </div>
+          <div class="sim-card"><div class="sim-number">09.8779.8779</div><div class="sim-price">68,000,000 đ</div></div>
+          <div class="sim-card"><div class="sim-number">0903.199.888</div><div class="sim-price">79,000,000 đ</div></div>
+          <div class="sim-card"><div class="sim-number">0907.259.999</div><div class="sim-price">299,000,000 đ</div></div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="right">
+      <div class="box yellow">
+        <h4>SIM THEO GIÁ</h4>
         <ul>
           <li>Sim dưới 500k</li>
-          <li>Sim 500k - 1triệu</li>
-          <li>Sim 1 - 2 triệu</li>
-          <li>Sim 2 - 5 triệu</li>
-          <li>Sim 5 - 10 triệu</li>
+          <li>Sim từ 500k - 1 triệu</li>
+          <li>Sim từ 1 - 2 triệu</li>
+          <li>Sim từ 2 - 5 triệu</li>
         </ul>
       </div>
-      <div class="box">
-        <h3>SIM THEO MẠNG</h3>
+
+      <div class="box yellow">
+        <h4>SIM THEO MẠNG</h4>
         <ul>
           <li>Sim Viettel</li>
           <li>Sim Vinaphone</li>
           <li>Sim Mobifone</li>
+          <li>Sim Vietnamobile</li>
         </ul>
       </div>
-    </aside>
 
-    <section class="content">
-      <div class="hero">
-        <h1>Sim đẹp giá tốt</h1>
-        <p>Hệ thống phân phối sim phong thủy, sim hợp mệnh, thu mua giá cao, ship toàn quốc.</p>
-      </div>
-
-      <section class="sim-section">
-        <h2>SIM ĐẸP GIÁ TỐT</h2>
-        <div class="sim-grid">
-          <!-- Dùng mẫu: đổi số / giá theo ý bạn -->
-          <div class="sim-card"><div class="sim-num">0986.116.116</div><div class="sim-price">222 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0932.932.932</div><div class="sim-price">199 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0989.673.673</div><div class="sim-price">39 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0933.358.358</div><div class="sim-price">68 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0914.566.566</div><div class="sim-price">59 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0989.336.336</div><div class="sim-price">190 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0869.969.969</div><div class="sim-price">110 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0869.989.989</div><div class="sim-price">110 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0356.838.838</div><div class="sim-price">25 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0827.388.388</div><div class="sim-price">19 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0379.155.155</div><div class="sim-price">16 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0387.556.556</div><div class="sim-price">16 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0829.985.985</div><div class="sim-price">12 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0788.306.306</div><div class="sim-price">8 triệu</div></div>
-          <div class="sim-card"><div class="sim-num">0372.290.290</div><div class="sim-price">6 triệu</div></div>
+      <div class="box">
+        <h4>TIN MỚI</h4>
+        <div class="news">
+          <p><strong>26-06-2022</strong> Bí quyết chọn sim hợp tuổi Kỷ Hợi...</p>
+          <p><strong>25-06-2022</strong> Cách chọn sim hợp tuổi Ất Mùi...</p>
         </div>
-      </section>
-    </section>
-
-    <aside class="rightbar">
-      <div class="contact-box">
-        <h4>BÁN HÀNG ONLINE</h4>
-        <div class="phone">📞 <a href="tel:0978670453">0978 670 453</a></div>
-        <div class="zalo"><a href="https://zalo.me/0978670453" target="_blank">Zalo Chat tư vấn</a></div>
       </div>
     </aside>
   </main>
 
-  <!-- nút cố định gọi + Zalo góc phải -->
-  <div class="contact-fixed">
-    <a class="btn-phone" href="tel:0978670453" title="Gọi ngay">
-      <svg width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="M6.62 10.79a15.464 15.464 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1v3.5a1 1 0 01-1 1C11.85 21.5 2.5 12.15 2.5 3a1 1 0 011-1H7a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.01l-2.71 2.21z"/></svg>
-    </a>
-    <a class="btn-zalo" href="https://zalo.me/0978670453" target="_blank" title="Zalo Chat">
-      <!-- đơn giản dùng chữ ZALO hoặc ảnh nếu muốn -->
-      <img src="https://cdn-icons-png.flaticon.com/512/2111/2111728.png" alt="zalo" />
-    </a>
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <strong>SimPhongThuyMinhTien</strong> — Bảo hành & Thu mua giá cao. Số liên hệ: <a href="tel:0978670453">0978 670 453</a></div>
+    </div>
+  </footer>
+
+  <!-- Floating contact buttons (call + Zalo) -->
+  <div class="contact-fixed" aria-hidden="false">
+    <a class="call-btn" href="tel:0978670453" title="Gọi mua hàng">📞<span>0978 670 453</span></a>
+    <a class="zalo-btn" href="https://zalo.me/0978670453" target="_blank" rel="noopener" title="Chat Zalo">💬<span>Zalo</span></a>
   </div>
 
   <script src="script.js"></script>
