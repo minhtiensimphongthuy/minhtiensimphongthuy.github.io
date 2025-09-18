@@ -7,18 +7,24 @@ const files = fs.readdirSync(".")
 
 let allData = [];
 
-// Đọc và gộp dữ liệu
+// Đọc và gộp dữ liệu từ các file
 files.forEach(file => {
   if (fs.existsSync(file)) {
-    const raw = fs.readFileSync(file, "utf8");
     try {
+      const raw = fs.readFileSync(file, "utf8");
       const data = JSON.parse(raw);
-      allData = allData.concat(data);
+
+      if (Array.isArray(data)) {
+        allData = allData.concat(data);
+        console.log(`📥 Đã đọc ${file}, số bản ghi: ${data.length}`);
+      } else {
+        console.warn(`⚠️ File ${file} không phải mảng JSON hợp lệ!`);
+      }
     } catch (err) {
       console.error(`❌ Lỗi khi đọc file ${file}:`, err.message);
     }
   } else {
-    console.warn(`⚠️ File ${file} không tồn tại`);
+    console.warn(`⚠️ File ${file} không tồn tại!`);
   }
 });
 
