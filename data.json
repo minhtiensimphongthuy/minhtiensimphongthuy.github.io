@@ -9,19 +9,4 @@
   {"id":8,"number":"0983122888","price":110000000,"carrier":"Viettel","category":"Sim đẹp","featured":false},
   {"id":9,"number":"0966882333","price":42000000,"carrier":"Viettel","category":"Sim giá rẻ","featured":false},
   {"id":10,"number":"0978670453","price":0,"carrier":"Hotline","category":"Liên hệ","featured":false}
-  {
-    "so": "0908.173.999",
-    "gia": "24,966,000",
-    "nhamang": "mobifone"
-  },
-  {
-    "so": "070.3968.999",
-    "gia": "13,642,000",
-    "nhamang": "mobifone"
-  },
-  {
-    "so": "0523.274.999",
-    "gia": "1,450,000",
-    "nhamang": "viettel"
-  }
 ]
