@@ -1,73 +1,90 @@
 // excel.js
-// Gợi ý: đặt cùng folder với data.json, excel.html
+// Đặt cùng folder với data.json, excel.html
 
-const KNOWN_FILES = ['data.json','data1.json','data2.json']; // nếu bạn có thêm đổi danh sách ở đây
+// danh sách file JSON "cần kiểm tra" (bạn có thể mở rộng)
+const KNOWN_FILES = ['data.json','data1.json','data2.json','data3.json'];
+
 const sel = document.getElementById('dataFile');
 const btn = document.getElementById('btnDownload');
 const btnRefresh = document.getElementById('btnRefresh');
 const msg = document.getElementById('msg');
 
-function log(m){
-  msg.textContent = m;
+function log(t){
+  msg.innerText = t || '';
 }
 
-// kiểm tra file tồn tại (dùng fetch HEAD)
+// kiểm tra file tồn tại (HEAD request)
 async function existsFile(url){
   try{
-    const r = await fetch(url, { method: 'HEAD', cache: 'no-store' });
-    return r.ok;
+    const r = await fetch(url, { method:'HEAD', cache:'no-store' });
+    return r && r.ok;
   }catch(e){
     return false;
   }
 }
 
-// populate dropdown với các file tồn tại
+// điền dropdown với các file tồn tại
 async function populateFiles(){
-  sel.innerHTML = '';
-  let foundAny = false;
+  sel.innerHTML = '<option>Đang kiểm tra...</option>';
+  let found = false;
+
   for(const f of KNOWN_FILES){
     const ok = await existsFile(f);
     if(ok){
       const o = document.createElement('option');
-      o.value = f; o.textContent = f;
+      o.value = f;
+      o.textContent = f;
       sel.appendChild(o);
-      foundAny = true;
+      found = true;
     }
   }
-  // nếu không tìm thấy file nào trong KNOWN_FILES, thêm default data.json
-  if(!foundAny){
+
+  if(!found){
+    // nếu không tìm thấy file nào, vẫn giữ data.json làm mặc định (nếu có)
+    sel.innerHTML = '';
     const o = document.createElement('option');
-    o.value = 'data.json'; o.textContent = 'data.json';
+    o.value = 'data.json';
+    o.textContent = 'data.json (mặc định)';
     sel.appendChild(o);
-    log('Chưa tìm thấy file mẫu, mặc định sử dụng data.json (bạn có thể commit data.json lên).');
+    log('Chưa tìm thấy file trong KNOWN_FILES — dùng data.json nếu có.');
   } else {
-    log('Đã tìm thấy file dữ liệu trên server.');
+    log('Danh sách file đã cập nhật.');
   }
 }
 
-// chuẩn hóa dữ liệu: nếu file trả về object chứa mảng ở key 'data' hoặc 'sims'
-function normalizeJsonPayload(j){
-  if(Array.isArray(j)) return j;
-  if(j && Array.isArray(j.data)) return j.data;
-  if(j && Array.isArray(j.sims)) return j.sims;
-  // nếu là object với các object con, cố gắng chuyển sang array các object con
+// chuẩn hoá payload JSON -> trả về mảng (hoặc null nếu không thể)
+function normalizeJsonPayload(payload){
+  if(!payload) return null;
+  if(Array.isArray(payload)) return payload;
+
+  // nếu object và chứa key 'data' hoặc 'sims'
+  if(payload && typeof payload === 'object'){
+    if(Array.isArray(payload.data)) return payload.data;
+    if(Array.isArray(payload.sims)) return payload.sims;
+
+    // nếu object chứa key mà value là mảng, lấy mảng đầu tiên
+    for(const k of Object.keys(payload)){
+      if(Array.isArray(payload[k])) return payload[k];
+    }
+  }
   return null;
 }
 
+// tải file JSON và xuất excel
 async function downloadExcel(){
   const file = sel.value || 'data.json';
   btn.disabled = true;
   log('Đang tải dữ liệu từ ' + file + ' ...');
 
   try{
-    const res = await fetch(file, { cache: 'no-store' });
+    const res = await fetch(file, { cache:'no-store' });
     if(!res.ok) throw new Error('Không tải được file: ' + res.status);
 
-    const j = await res.json();
-    let arr = normalizeJsonPayload(j);
-    if(arr === null){
-      // chưa phải mảng -> thông báo
-      log('File JSON không chứa mảng dữ liệu (hoặc có key khác). Hãy kiểm tra file.');
+    const json = await res.json();
+    const arr = normalizeJsonPayload(json);
+
+    if(!arr){
+      log('File JSON không chứa mảng dữ liệu hợp lệ. Hãy kiểm tra file.');
       btn.disabled = false;
       return;
     }
@@ -78,17 +95,20 @@ async function downloadExcel(){
       return;
     }
 
-    // chuẩn hóa các key (tạo header từ tập hợp key)
-    const headerKeys = Object.keys(arr.reduce((acc, it) => Object.assign(acc, it || {}), {}));
+    // tạo header union của tất cả keys
+    const headerKeys = Object.keys(arr.reduce((acc,item)=>{
+      if(item && typeof item === 'object'){
+        Object.keys(item).forEach(k => { acc[k] = true; });
+      }
+      return acc;
+    }, {}));
 
-    // tạo worksheet từ JSON với header cố định (đảm bảo cột cố định)
+    // chuyển JSON -> worksheet với header cố định (đảm bảo cột nhất quán)
     const ws = XLSX.utils.json_to_sheet(arr, { header: headerKeys });
-
-    // sửa format: nếu muốn, có thể ép kiểu cột (bỏ ở bản này)
     const wb = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
-    const outName = file.replace(/\.json$/i, '') + '.xlsx';
+    const outName = file.replace(/\.json$/i,'') + '.xlsx';
     XLSX.writeFile(wb, outName);
 
     log('Hoàn tất: đã tạo ' + outName);
@@ -100,12 +120,13 @@ async function downloadExcel(){
   }
 }
 
-// refresh/kiểm tra file tồn tại
+// refresh danh sách file
 async function refreshFiles(){
   log('Kiểm tra file trên server ...');
   await populateFiles();
 }
 
+// sự kiện
 document.addEventListener('DOMContentLoaded', async ()=>{
   await populateFiles();
   btn.addEventListener('click', downloadExcel);
