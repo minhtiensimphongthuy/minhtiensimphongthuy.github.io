@@ -7,3 +7,26 @@
   "featured": true,
   "logo": "images/viettel.png"
 }
+[
+{"id":31,"number":"0981778789","price":35000000,"carrier":"Viettel","category":"Sim vip","featured":false},
+  {"id":32,"number":"0866666119","price":30000000,"carrier":"Viettel","category":"Sim vip","featured":false},
+  {"id":33,"number":"0898888998","price":68000000,"carrier":"Viettel","category":"Sim vip","featured":false},
+  {"id":34,"number":"0762209506","price":1100000,"carrier":"Mobifone","category":"Sim giá rẻ","featured":true},
+  {"id":35,"number":"0762204338","price":770000,"carrier":"Mobifone","category":"Sim giá rẻ","featured":false},
+  {"id":36,"number":"0762109632","price":770000,"carrier":"Mobifone","category":"Sim giá rẻ","featured":false},
+  {"id":37,"number":"0773240793","price":520000,"carrier":"Mobifone","category":"Sim giá rẻ","featured":false},
+  {"id":38,"number":"0903273471","price":770000,"carrier":"Mobifone","category":"Sim giá rẻ","featured":false},
+  {"id":39,"number":"0794081378","price":770000,"carrier":"Mobifone","category":"Sim giá rẻ","featured":false},
+  {"id":40,"number":"0762209443","price":1100000,"carrier":"Mobifone","category":"Sim đẹp","featured":false},
+
+  {"id":41,"number":"09966112358","price":13050000,"carrier":"Gmobile","category":"Sim đẹp","featured":true},
+  {"id":42,"number":"0997395539","price":3000000,"carrier":"Gmobile","category":"Sim giá rẻ","featured":false},
+  {"id":43,"number":"0993662652","price":28500000,"carrier":"Gmobile","category":"Sim vip","featured":false},
+  {"id":44,"number":"0877149999","price":55000000,"carrier":"Itelecom","category":"Sim vip","featured":true},
+  {"id":45,"number":"0879708888","price":50000000,"carrier":"Itelecom","category":"Sim vip","featured":false},
+  {"id":46,"number":"0874981993","price":2340000,"carrier":"Itelecom","category":"Sim giá rẻ","featured":false},
+  {"id":47,"number":"0588886666","price":168000000,"carrier":"Vietnamobile","category":"Sim vip","featured":true},
+  {"id":48,"number":"0563333339","price":79000000,"carrier":"Vietnamobile","category":"Sim vip","featured":false},
+  {"id":49,"number":"0566786666","price":99000000,"carrier":"Vietnamobile","category":"Sim vip","featured":false},
+  {"id":50,"number":"0922000000","price":666000000,"carrier":"Vietnamobile","category":"Sim vip","featured":false}
+]
