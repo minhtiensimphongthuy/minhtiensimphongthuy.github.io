@@ -1,38 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Sim - Demo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sim Phong Thủy Minh Tiến</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* style nhỏ để demo (nếu bạn có style.css riêng thì giữ) */
-    body{font-family:Arial,Helvetica,sans-serif;color:#222;background:#f5f5f5;padding:18px}
-    .wrap{max-width:1150px;margin:0 auto}
-    .filters{display:flex;gap:8px;margin-bottom:10px;align-items:center}
-    .sim-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .sim-card{background:#fff;padding:12px;border-radius:6px;display:flex;align-items:center;gap:12px;border:1px solid #eee}
-    .sim-logo img{width:48px;height:48px;border-radius:50%}
-    .sim-num{font-weight:700;color:#c62}
-    .sim-price{color:#666}
-    .btn{background:#f0b500;border:0;padding:8px 10px;border-radius:6px;cursor:pointer}
-    @media(max-width:720px){ .sim-grid{grid-template-columns:repeat(1,1fr)} }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    header { background:#ffbf00; padding:10px; text-align:center; font-size:20px; font-weight:bold; }
+    .container { display:flex; max-width:1200px; margin:20px auto; gap:20px; }
+    main { flex:3; }
+    aside { flex:1; background:#f9f9f9; padding:15px; border:1px solid #ddd; }
+    .sim-card { border:1px solid #ddd; padding:10px; margin:8px; border-radius:6px; text-align:center; }
+    .sim-logo img{ width:48px; height:48px; }
+    .sim-num { font-size:18px; font-weight:bold; margin:5px 0; }
+    .sim-meta { color:#666; font-size:13px; }
+    .sim-price { margin-top:5px; color:#d00; font-weight:bold; }
+    #pagination { text-align:center; margin:20px; }
+    #pagination button { margin:2px; }
+    .filters { margin-bottom:15px; }
+    .filters input, .filters select { margin:5px; padding:5px; }
+    .contact-fixed { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; }
+    .contact-fixed a { background:#ffbf00; padding:8px 12px; border-radius:6px; text-decoration:none; color:#000; font-weight:bold; }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Danh sách Sim</h1>
+  <header>
+    <span class="brand">SimPhongThuyMinhTien</span>
+  </header>
 
-    <div class="filters">
-      <input id="q" placeholder="Tìm số (ví dụ 091, 076...)" />
-      <select id="networkFilter"><option value="all">Tất cả nhà mạng</option></select>
-      <input id="minPrice" placeholder="Giá từ (vnđ)" type="number" />
-      <input id="maxPrice" placeholder="Giá đến (vnđ)" type="number" />
-      <button id="filterBtn" class="btn">Lọc</button>
-      <button id="resetBtn" class="btn">Reset</button>
-    </div>
+  <div class="container">
+    <main>
+      <div class="filters">
+        <input type="text" id="q" placeholder="Tìm số sim...">
+        <select id="networkFilter"></select>
+        <input type="text" id="minPrice" placeholder="Giá từ">
+        <input type="text" id="maxPrice" placeholder="Giá đến">
+        <button id="filterBtn">Lọc</button>
+        <button id="resetBtn">Reset</button>
+      </div>
 
-    <section id="sim-list" class="sim-grid"></section>
+      <section id="sim-list" class="sim-list">
+        <!-- Cards render tại đây -->
+      </section>
+
+      <div id="pagination" class="pagination"></div>
+    </main>
+
+    <aside>
+      <h3>Danh mục</h3>
+      <ul>
+        <li>Sim dưới 500k</li>
+        <li>Sim 500k - 1 triệu</li>
+        <li>Sim 1 - 2 triệu</li>
+        <li>Sim 2 - 5 triệu</li>
+      </ul>
+    </aside>
+  </div>
+
+  <!-- Nút gọi + zalo -->
+  <div class="contact-fixed">
+    <a class="contact-fixed call" href="#">📞 Gọi ngay</a>
+    <a class="contact-fixed zalo" href="#" target="_blank">💬 Zalo</a>
   </div>
 
   <script src="script.js" defer></script>
