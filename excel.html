@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tải Excel</title>
+
+  <!-- SheetJS (thư viện tạo .xlsx) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+
+  <!-- script xử lý xuất Excel (defer để chạy sau SheetJS) -->
+  <script src="excel.js" defer></script>
+
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;padding:20px;}
+    .box{max-width:800px;margin:10px auto;border:1px solid #e0e0e0;padding:16px;border-radius:6px;}
+    label{display:block;margin:8px 0 4px;}
+    select,input,button{padding:8px 10px;margin-right:8px;font-size:14px;}
+    button{background:#28a745;color:#fff;border:0;border-radius:4px;cursor:pointer;}
+    button:disabled{opacity:.6;cursor:default;}
+    #msg{margin-top:10px;color:#333}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Xuất dữ liệu ra Excel</h2>
+    <p>Chọn file JSON có sẵn trong thư mục website (ví dụ: <code>data.json</code>, <code>data1.json</code>)</p>
+
+    <label for="dataFile">Chọn file dữ liệu:</label>
+    <select id="dataFile">
+      <option value="data.json">data.json (mặc định)</option>
+    </select>
+
+    <div style="margin-top:12px;">
+      <button id="btnDownload">Tải Excel</button>
+      <button id="btnRefresh">Kiểm tra file có tồn tại</button>
+    </div>
+
+    <div id="msg"></div>
+  </div>
+</body>
+</html>
