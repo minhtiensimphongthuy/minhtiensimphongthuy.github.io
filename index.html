@@ -5,63 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sim Phong Thủy Minh Tiến</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; }
-    header { background:#ffbf00; padding:10px; text-align:center; font-size:20px; font-weight:bold; }
-    .container { display:flex; max-width:1200px; margin:20px auto; gap:20px; }
-    main { flex:3; }
-    aside { flex:1; background:#f9f9f9; padding:15px; border:1px solid #ddd; }
-    .sim-card { border:1px solid #ddd; padding:10px; margin:8px; border-radius:6px; text-align:center; }
-    .sim-logo img{ width:48px; height:48px; }
-    .sim-num { font-size:18px; font-weight:bold; margin:5px 0; }
-    .sim-meta { color:#666; font-size:13px; }
-    .sim-price { margin-top:5px; color:#d00; font-weight:bold; }
-    #pagination { text-align:center; margin:20px; }
-    #pagination button { margin:2px; }
-    .filters { margin-bottom:15px; }
-    .filters input, .filters select { margin:5px; padding:5px; }
-    .contact-fixed { position:fixed; bottom:20px; right:20px; display:flex; flex-direction:column; gap:10px; }
-    .contact-fixed a { background:#ffbf00; padding:8px 12px; border-radius:6px; text-decoration:none; color:#000; font-weight:bold; }
-  </style>
 </head>
 <body>
+  <!-- Header -->
   <header>
-    <span class="brand">SimPhongThuyMinhTien</span>
+    <h1>Sim Phong Thủy Minh Tiến</h1>
+    <nav>
+      <a href="index.html">Trang chủ</a>
+      <a href="gioithieu.html">Giới thiệu</a>
+      <a href="lienhe.html">Liên hệ</a>
+    </nav>
   </header>
 
   <div class="container">
+    <!-- Nội dung chính -->
     <main>
+      <!-- Bộ lọc -->
       <div class="filters">
         <input type="text" id="q" placeholder="Tìm số sim...">
-        <select id="networkFilter"></select>
+        <select id="networkFilter">
+          <option value="">-- Chọn mạng --</option>
+          <option value="viettel">Viettel</option>
+          <option value="vinaphone">Vinaphone</option>
+          <option value="mobifone">Mobifone</option>
+        </select>
         <input type="text" id="minPrice" placeholder="Giá từ">
         <input type="text" id="maxPrice" placeholder="Giá đến">
         <button id="filterBtn">Lọc</button>
         <button id="resetBtn">Reset</button>
       </div>
 
+      <!-- Danh sách sim -->
       <section id="sim-list" class="sim-list">
-        <!-- Cards render tại đây -->
+        <!-- Script sẽ render dữ liệu từ data.json vào đây -->
       </section>
 
+      <!-- Phân trang -->
       <div id="pagination" class="pagination"></div>
     </main>
 
+    <!-- Sidebar -->
     <aside>
       <h3>Danh mục</h3>
       <ul>
-        <li>Sim dưới 500k</li>
-        <li>Sim 500k - 1 triệu</li>
-        <li>Sim 1 - 2 triệu</li>
-        <li>Sim 2 - 5 triệu</li>
+        <li data-range="0-500000">Sim dưới 500k</li>
+        <li data-range="500000-1000000">Sim 500k - 1 triệu</li>
+        <li data-range="1000000-2000000">Sim 1 - 2 triệu</li>
+        <li data-range="2000000-5000000">Sim 2 - 5 triệu</li>
       </ul>
     </aside>
   </div>
 
-  <!-- Nút gọi + zalo -->
+  <!-- Nút gọi + Zalo -->
   <div class="contact-fixed">
-    <a class="contact-fixed call" href="#">📞 Gọi ngay</a>
-    <a class="contact-fixed zalo" href="#" target="_blank">💬 Zalo</a>
+    <a class="call" href="tel:0901234567">📞 Gọi ngay</a>
+    <a class="zalo" href="https://zalo.me/0901234567" target="_blank">💬 Zalo</a>
   </div>
 
   <script src="script.js" defer></script>
