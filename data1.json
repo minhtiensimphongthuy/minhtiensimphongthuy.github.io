@@ -1,0 +1,37 @@
+[
+  {
+    "number": "0762209506",
+    "price": 1100000,
+    "carrier": "Mobifone"
+  },
+  {
+    "number": "0762204338",
+    "price": 770000,
+    "carrier": "Mobifone"
+  },
+  {
+    "number": "0773240793",
+    "price": 520000,
+    "carrier": "Mobifone"
+  },
+  {
+    "number": "0903274347",
+    "price": 770000,
+    "carrier": "Mobifone"
+  },
+  {
+    "number": "0943780808",
+    "price": 1500000,
+    "carrier": "Vinaphone"
+  },
+  {
+    "number": "0853970000",
+    "price": 3600000,
+    "carrier": "Vinaphone"
+  },
+  {
+    "number": "0829327979",
+    "price": 2900000,
+    "carrier": "Vinaphone"
+  }
+]
